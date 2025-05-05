@@ -1,6 +1,8 @@
 import React from 'react'
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
+import ZennArticlesPage from '../articles/page';
+
 const Dashboard = async () => {
   const supabase = await createClient();
 
@@ -12,7 +14,10 @@ const Dashboard = async () => {
     return redirect("/sign-in");
   }
   return (
-    <div>Dashboard</div>
+    <div>
+      <ZennArticlesPage/>
+    </div>
+
   )
 }
 
